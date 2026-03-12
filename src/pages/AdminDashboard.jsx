@@ -67,7 +67,7 @@ export default function AdminDashboard() {
   // Add Room
   const addRoom = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/rooms", {
+      const res = await axios.post("http:// https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms", {
         name: roomName,
         capacity,
         equipment,
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
   const updateRoom = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/admin/rooms/${editingRoomId}`,
+        `http:// https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms/${editingRoomId}`,
         { name: roomName, capacity, equipment }
       );
 
@@ -106,7 +106,7 @@ export default function AdminDashboard() {
   // Delete Room
   const deleteRoom = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/rooms/${id}`);
+      await axios.delete(`http:// https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms/${id}`);
       setRooms(rooms.filter((r) => r.id !== id));
     } catch (err) {
       console.error("Delete room error:", err);

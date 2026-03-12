@@ -41,7 +41,7 @@ export default function BookingForm() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/bookings", {
+      const res = await fetch("http:// https://meetsmart-backend-tb5e.onrender.com/api/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

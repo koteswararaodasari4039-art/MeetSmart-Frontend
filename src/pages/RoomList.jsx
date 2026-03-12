@@ -11,7 +11,7 @@ export default function RoomList() {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/rooms");
+        const res = await fetch("http:// https://meetsmart-backend-tb5e.onrender.com/api/rooms");
         const data = await res.json();
 
         // Check if API returned an array

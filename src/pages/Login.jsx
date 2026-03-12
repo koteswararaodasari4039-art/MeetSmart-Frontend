@@ -14,7 +14,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch("http:// https://meetsmart-backend-tb5e.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
