@@ -1,3 +1,13 @@
+/* Global Fix */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+
 .mybookings-container {
   max-width: 1200px;
   margin: auto;
@@ -7,6 +17,10 @@
 
 /* Header */
 
+.mybookings-header {
+  margin-bottom: 30px;
+}
+
 .mybookings-header h1 {
   font-size: 32px;
   font-weight: 700;
@@ -15,18 +29,18 @@
 
 .mybookings-header p {
   color: #6b7280;
-  margin-bottom: 30px;
 }
 
-/* Grid layout */
+/* Grid Layout */
 
 .bookings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
   gap: 22px;
+  justify-content: center;
 }
 
-/* Booking card */
+/* Booking Card */
 
 .booking-card {
   background: white;
@@ -35,6 +49,7 @@
   border: 1px solid #e5e7eb;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   transition: all 0.25s ease;
+  width: 100%;
 }
 
 .booking-card:hover {
@@ -42,7 +57,7 @@
   box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
-/* Card header */
+/* Card Header */
 
 .booking-card-header {
   display: flex;
@@ -56,7 +71,7 @@
   font-weight: 600;
 }
 
-/* Status badge */
+/* Status Badge */
 
 .status-badge {
   background: #22c55e;
@@ -66,7 +81,7 @@
   border-radius: 20px;
 }
 
-/* Booking info */
+/* Booking Info */
 
 .booking-info p {
   display: flex;
@@ -83,7 +98,7 @@
   color: #111827;
 }
 
-/* Empty state */
+/* Empty Booking */
 
 .empty-booking {
   text-align: center;
@@ -97,12 +112,73 @@
   margin-bottom: 10px;
 }
 
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .mybookings-container {
+    padding: 30px 20px;
+  }
+
+  .mybookings-header h1 {
+    font-size: 28px;
+  }
+
+  .bookings-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+}
+
 /* Mobile */
 
 @media (max-width: 600px) {
 
+  .mybookings-container {
+    padding: 25px 15px;
+  }
+
+  .mybookings-header {
+    text-align: center;
+  }
+
   .mybookings-header h1 {
-    font-size: 26px;
+    font-size: 24px;
+  }
+
+  .mybookings-header p {
+    font-size: 14px;
+  }
+
+  .bookings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-card {
+    padding: 16px;
+  }
+
+  .booking-info p {
+    font-size: 13px;
+  }
+
+  .empty-booking {
+    padding: 40px 20px;
+  }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 400px) {
+
+  .booking-card-header h3 {
+    font-size: 16px;
+  }
+
+  .status-badge {
+    font-size: 10px;
+    padding: 3px 8px;
   }
 
 }
