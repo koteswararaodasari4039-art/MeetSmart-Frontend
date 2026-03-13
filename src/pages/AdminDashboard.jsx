@@ -39,15 +39,15 @@ export default function AdminDashboard() {
 
     const loadData = async () => {
       try {
-        const roomsRes = await axios.get("http://localhost:5000/api/rooms");
+        const roomsRes = await axios.get("https://meetsmart-backend-tb5e.onrender.com/api/rooms");
         const bookingsRes = await axios.get(
-          "http://localhost:5000/api/bookings/admin/all"
+          "https://meetsmart-backend-tb5e.onrender.com/api/bookings/admin/all"
         );
         const roomUsageRes = await axios.get(
-          "http://localhost:5000/api/analytics/rooms-usage"
+          "https://meetsmart-backend-tb5e.onrender.com/api/analytics/rooms-usage"
         );
         const busyHoursRes = await axios.get(
-          "http://localhost:5000/api/analytics/busy-hours"
+          "https://meetsmart-backend-tb5e.onrender.com/api/analytics/busy-hours"
         );
 
         setRooms(roomsRes.data);
@@ -67,7 +67,7 @@ export default function AdminDashboard() {
   // Add Room
   const addRoom = async () => {
     try {
-      const res = await axios.post("http:// https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms", {
+      const res = await axios.post("https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms", {
         name: roomName,
         capacity,
         equipment,
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
   const updateRoom = async () => {
     try {
       const res = await axios.put(
-        `http:// https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms/${editingRoomId}`,
+        `https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms/${editingRoomId}`,
         { name: roomName, capacity, equipment }
       );
 
@@ -106,7 +106,7 @@ export default function AdminDashboard() {
   // Delete Room
   const deleteRoom = async (id) => {
     try {
-      await axios.delete(`http:// https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms/${id}`);
+      await axios.delete(`https://meetsmart-backend-tb5e.onrender.com/api/admin/rooms/${id}`);
       setRooms(rooms.filter((r) => r.id !== id));
     } catch (err) {
       console.error("Delete room error:", err);

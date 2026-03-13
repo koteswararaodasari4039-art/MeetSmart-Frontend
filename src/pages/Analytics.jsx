@@ -9,8 +9,8 @@ export default function Analytics() {
   useEffect(() => {
     const loadAnalytics = async () => {
       try {
-        const roomsRes = await axios.get("http:// https://meetsmart-backend-tb5e.onrender.com/api/admin/analytics/rooms-usage");
-        const hoursRes = await axios.get("http:// https://meetsmart-backend-tb5e.onrender.com/api/admin/analytics/busy-hours");
+        const roomsRes = await axios.get("https://meetsmart-backend-tb5e.onrender.com/api/admin/analytics/rooms-usage");
+        const hoursRes = await axios.get("https://meetsmart-backend-tb5e.onrender.com/api/admin/analytics/busy-hours");
         setRoomUsage(roomsRes.data);
         setBusyHours(hoursRes.data);
       } catch (err) {

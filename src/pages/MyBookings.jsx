@@ -10,7 +10,7 @@ function MyBookings() {
   useEffect(() => {
     if (user) {
       axios
-        .get(`http:// https://meetsmart-backend-tb5e.onrender.com/api/bookings/user/${user.id}`)
+        .get(`https://meetsmart-backend-tb5e.onrender.com/api/bookings/user/${user.id}`)
         .then((res) => {
           setBookings(res.data);
         })

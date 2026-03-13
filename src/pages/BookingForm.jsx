@@ -18,7 +18,7 @@ export default function BookingForm() {
 
   // Fetch room details
   useEffect(() => {
-    fetch(`http://localhost:5000/api/rooms/${id}`)
+    fetch(`https://meetsmart-backend-tb5e.onrender.com/api/rooms/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setRoom(data);
@@ -41,7 +41,7 @@ export default function BookingForm() {
     }
 
     try {
-      const res = await fetch("http:// https://meetsmart-backend-tb5e.onrender.com/api/bookings", {
+      const res = await fetch("https://meetsmart-backend-tb5e.onrender.com/api/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
